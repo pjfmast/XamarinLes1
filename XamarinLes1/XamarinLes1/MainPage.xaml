@@ -28,8 +28,9 @@
             <Button Text="Medium" />
             <Button Text="Large" />
         </StackLayout>
-
-        <Label Text="resize me"
+        
+        <!--view-to-view binding: target property: Label FontSize and source property: Slider value-->
+        <Label Text="{Binding Value, StringFormat='resize me to {0} pixels'}"
                BindingContext="{x:Reference Name=slider}"
                Rotation="{Binding Path=Value}"
                FontAttributes="Bold"
