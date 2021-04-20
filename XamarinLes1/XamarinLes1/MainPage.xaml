@@ -2,28 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinLes1.MainPage">
-
-    <Grid RowSpacing="0" ColumnSpacing="0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="2*" />
-        </Grid.ColumnDefinitions>
-        
-        <Label Text="Spanning over two columns"
-               Margin="30,20"
-               FontSize="Large"
-               Grid.ColumnSpan="2" />
-        <BoxView Color="Aqua"
-                 Margin="0"
-                 Grid.Row="1" />
-        <BoxView Color="Red"
-                 Grid.Row="1"
-                 Grid.Column="1" />
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="buttonTextColor">Blue</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout Margin="20,0,0,0">
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="First Xaml demo!"
+                   HorizontalTextAlignment="Center"
+                   TextColor="Black" FontSize="36"/>
+        </Frame>
+        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
+        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
+        <Entry Margin="20,20"/>
+        <Slider x:Name="slider" 
+                Margin="20,10"
+                Maximum="64"
+                Minimum="4"
+                Value="12"/>
+        <StackLayout Orientation="Horizontal" >
+            <Button Text="Small" 
+                    TextColor="{StaticResource buttonTextColor}" />
+            <Button Text="Medium" />
+            <Button Text="Large" />
+        </StackLayout>
 
         <Button Text="Click"
                 Grid.Row="2"
